@@ -1,6 +1,6 @@
 import pandas as pd
 
-pd.set_option("precision",2)
+#pd.set_option("precision",2)
 
 #Series = One Dimensional Array
 #Dataframe = Two DImensional Array
