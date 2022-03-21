@@ -12,9 +12,11 @@ labels = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
 
 #given the data above, create a datafram using the labels as row indexes and perform the following tasks#
 
+exam = pd.DataFrame(exam_data)
 
+exam.index = labels
 
-
+#print(exam)
 
 
 
@@ -34,7 +36,8 @@ h      Laura    NaN
 i      Kevin    8.0                                                    
 j      Jonas   19.0 
 """
-
+step1 = exam[["name","score"]]
+print(step1)
 
 
 
@@ -51,7 +54,8 @@ f   20.0     yes
 g   14.5     yes
 
 """
-
+step2 = exam.loc[['b','d','f','g'],["score","qualify"]]
+print(step2)
 
 
 
@@ -67,10 +71,8 @@ d    James    NaN         3      no
 f  Michael   20.0         3     yes                    
 
 """
-
-
-
-
+att = exam[(exam['attempts'] > 2)]
+print(att)
 
 
 """
@@ -83,8 +85,8 @@ f         3    Michael       yes        20.0
 j         1      Jonas       yes        19.0   
 
 """
-
-
+inclusive = exam[(exam['score'] >= 15) & (exam['score'] <= 20)]
+print(inclusive)
 
 
 
@@ -106,6 +108,8 @@ Expected Output:
 5         3    Michael     yes   20.0 
 
 """
+c_sorted_exam = exam.sort_values(by=['attempts','name'], ascending=True)
+print(c_sorted_exam)
 
 
 

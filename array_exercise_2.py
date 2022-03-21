@@ -29,6 +29,9 @@ print(salesArray.sum(axis=1))
 #           Using the salesArray, create a new array that stores the 2% fee for each sale and register. Print the array and then print the total fees.
 print("-----------------------------------------------   STEP FIVE  -----------------------------------------------")
 fees = salesArray * 0.02
+totalFees = fees.sum()
+print(fees)
+print(totalFees)
 
 
 
